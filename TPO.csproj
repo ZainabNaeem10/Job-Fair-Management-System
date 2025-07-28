@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E24848A8-4C4D-4E6B-B1DB-EFA42BA77AA2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TPO</RootNamespace>
+    <AssemblyName>TPO</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SqlClient.4.9.0\lib\net462\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcademicRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcademicRecord.Designer.cs">
+      <DependentUpon>AcademicRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplyForJobs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplyForJobs.Designer.cs">
+      <DependentUpon>ApplyForJobs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BoothCoordinatorDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BoothCoordinatorDashboard.designer.cs">
+      <DependentUpon>BoothCoordinatorDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BoothTrafficMonitoring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BoothTrafficMonitoring.designer.cs">
+      <DependentUpon>BoothTrafficMonitoring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BoothVisits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BoothVisits.Designer.cs">
+      <DependentUpon>BoothVisits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Certificates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Certificates.Designer.cs">
+      <DependentUpon>Certificates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form10.Designer.cs">
+      <DependentUpon>Form10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form11.Designer.cs">
+      <DependentUpon>Form11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form12.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form12.Designer.cs">
+      <DependentUpon>Form12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form13.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form13.Designer.cs">
+      <DependentUpon>Form13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form14.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form14.Designer.cs">
+      <DependentUpon>Form14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form15.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form15.Designer.cs">
+      <DependentUpon>Form15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form16.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form16.Designer.cs">
+      <DependentUpon>Form16.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form17.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form17.Designer.cs">
+      <DependentUpon>Form17.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form18.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form18.Designer.cs">
+      <DependentUpon>Form18.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form19.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form19.Designer.cs">
+      <DependentUpon>Form19.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1r.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1r.Designer.cs">
+      <DependentUpon>Form1r.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form20.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form20.Designer.cs">
+      <DependentUpon>Form20.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form21.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form21.Designer.cs">
+      <DependentUpon>Form21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2r.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2r.Designer.cs">
+      <DependentUpon>Form2r.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3r.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3r.Designer.cs">
+      <DependentUpon>Form3r.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form4r.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4r.Designer.cs">
+      <DependentUpon>Form4r.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form5r.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5r.Designer.cs">
+      <DependentUpon>Form5r.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form6r.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form6r.Designer.cs">
+      <DependentUpon>Form6r.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form7.Designer.cs">
+      <DependentUpon>Form7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form7r.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form7r.Designer.cs">
+      <DependentUpon>Form7r.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form8r.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form8r.Designer.cs">
+      <DependentUpon>Form8r.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form9.Designer.cs">
+      <DependentUpon>Form9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5.Designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form6.Designer.cs">
+      <DependentUpon>Form6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form8.Designer.cs">
+      <DependentUpon>Form8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="giveReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="giveReview.Designer.cs">
+      <DependentUpon>giveReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterviewsSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterviewsSchedule.Designer.cs">
+      <DependentUpon>InterviewsSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="jobfairDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jobfairDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="jobfairDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jobfairDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="jobfairDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jobfairDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="jobfairDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jobfairDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="jobfairDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jobfairDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="jobfairDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jobfairDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="jobfairDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jobfairDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="jobfairDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jobfairDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="jobfairDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jobfairDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="jobfairDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jobfairDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="jobfairDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jobfairDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="jobfairDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jobfairDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="jobfairDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jobfairDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="jobfairDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jobfairDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="jobfairDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jobfairDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="jobfairDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jobfairDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="jobfairDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jobfairDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Login_booth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login_booth.designer.cs">
+      <DependentUpon>Login_booth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogOut.Designer.cs">
+      <DependentUpon>LogOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageInterviews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageInterviews.Designer.cs">
+      <DependentUpon>ManageInterviews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyApplications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyApplications.Designer.cs">
+      <DependentUpon>MyApplications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registration_booth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration_booth.designer.cs">
+      <DependentUpon>Registration_booth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchCompanies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchCompanies.Designer.cs">
+      <DependentUpon>SearchCompanies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="splashscren.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="splashscren.Designer.cs">
+      <DependentUpon>splashscren.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StdCheckin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StdCheckin.designer.cs">
+      <DependentUpon>StdCheckin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentDashboard.Designer.cs">
+      <DependentUpon>StudentDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewJobFairs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewJobFairs.Designer.cs">
+      <DependentUpon>ViewJobFairs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewSkills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewSkills.Designer.cs">
+      <DependentUpon>viewSkills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUpdateProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewUpdateProfile.Designer.cs">
+      <DependentUpon>ViewUpdateProfile.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AcademicRecord.resx">
+      <DependentUpon>AcademicRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplyForJobs.resx">
+      <DependentUpon>ApplyForJobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoothCoordinatorDashboard.resx">
+      <DependentUpon>BoothCoordinatorDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoothTrafficMonitoring.resx">
+      <DependentUpon>BoothTrafficMonitoring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoothVisits.resx">
+      <DependentUpon>BoothVisits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Certificates.resx">
+      <DependentUpon>Certificates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form10.resx">
+      <DependentUpon>Form10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form11.resx">
+      <DependentUpon>Form11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form12.resx">
+      <DependentUpon>Form12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form13.resx">
+      <DependentUpon>Form13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form14.resx">
+      <DependentUpon>Form14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form15.resx">
+      <DependentUpon>Form15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form16.resx">
+      <DependentUpon>Form16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form17.resx">
+      <DependentUpon>Form17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form18.resx">
+      <DependentUpon>Form18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form19.resx">
+      <DependentUpon>Form19.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1r.resx">
+      <DependentUpon>Form1r.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form20.resx">
+      <DependentUpon>Form20.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form21.resx">
+      <DependentUpon>Form21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2r.resx">
+      <DependentUpon>Form2r.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3r.resx">
+      <DependentUpon>Form3r.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4r.resx">
+      <DependentUpon>Form4r.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form5r.resx">
+      <DependentUpon>Form5r.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form6r.resx">
+      <DependentUpon>Form6r.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form7.resx">
+      <DependentUpon>Form7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form7r.resx">
+      <DependentUpon>Form7r.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form8.resx">
+      <DependentUpon>Form8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form8r.resx">
+      <DependentUpon>Form8r.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form9.resx">
+      <DependentUpon>Form9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form6.resx">
+      <DependentUpon>Form6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="giveReview.resx">
+      <DependentUpon>giveReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterviewsSchedule.resx">
+      <DependentUpon>InterviewsSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login_booth.resx">
+      <DependentUpon>Login_booth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogOut.resx">
+      <DependentUpon>LogOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageInterviews.resx">
+      <DependentUpon>ManageInterviews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyApplications.resx">
+      <DependentUpon>MyApplications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration_booth.resx">
+      <DependentUpon>Registration_booth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report10.rdlc" />
+    <EmbeddedResource Include="Report11.rdlc" />
+    <EmbeddedResource Include="Report12.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
+    <EmbeddedResource Include="Report5.rdlc" />
+    <EmbeddedResource Include="Report6.rdlc" />
+    <EmbeddedResource Include="Report7.rdlc" />
+    <EmbeddedResource Include="Report8.rdlc" />
+    <EmbeddedResource Include="Report9.rdlc" />
+    <EmbeddedResource Include="SearchCompanies.resx">
+      <DependentUpon>SearchCompanies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="splashscren.resx">
+      <DependentUpon>splashscren.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StdCheckin.resx">
+      <DependentUpon>StdCheckin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentDashboard.resx">
+      <DependentUpon>StudentDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewJobFairs.resx">
+      <DependentUpon>ViewJobFairs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewSkills.resx">
+      <DependentUpon>viewSkills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewUpdateProfile.resx">
+      <DependentUpon>ViewUpdateProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="jobfairDataSet.xsc">
+      <DependentUpon>jobfairDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>jobfairDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="jobfairDataSet.xss">
+      <DependentUpon>jobfairDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet1.xsc">
+      <DependentUpon>jobfairDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>jobfairDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="jobfairDataSet1.xss">
+      <DependentUpon>jobfairDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet10.xsc">
+      <DependentUpon>jobfairDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>jobfairDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="jobfairDataSet10.xss">
+      <DependentUpon>jobfairDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet11.xsc">
+      <DependentUpon>jobfairDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>jobfairDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="jobfairDataSet11.xss">
+      <DependentUpon>jobfairDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet12.xsc">
+      <DependentUpon>jobfairDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>jobfairDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="jobfairDataSet12.xss">
+      <DependentUpon>jobfairDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet13.xsc">
+      <DependentUpon>jobfairDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>jobfairDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="jobfairDataSet13.xss">
+      <DependentUpon>jobfairDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet14.xsc">
+      <DependentUpon>jobfairDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>jobfairDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="jobfairDataSet14.xss">
+      <DependentUpon>jobfairDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet15.xsc">
+      <DependentUpon>jobfairDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>jobfairDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="jobfairDataSet15.xss">
+      <DependentUpon>jobfairDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet16.xsc">
+      <DependentUpon>jobfairDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>jobfairDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="jobfairDataSet16.xss">
+      <DependentUpon>jobfairDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet2.xsc">
+      <DependentUpon>jobfairDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>jobfairDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="jobfairDataSet2.xss">
+      <DependentUpon>jobfairDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet3.xsc">
+      <DependentUpon>jobfairDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>jobfairDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="jobfairDataSet3.xss">
+      <DependentUpon>jobfairDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet4.xsc">
+      <DependentUpon>jobfairDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>jobfairDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="jobfairDataSet4.xss">
+      <DependentUpon>jobfairDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet5.xsc">
+      <DependentUpon>jobfairDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>jobfairDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="jobfairDataSet5.xss">
+      <DependentUpon>jobfairDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet6.xsc">
+      <DependentUpon>jobfairDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>jobfairDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="jobfairDataSet6.xss">
+      <DependentUpon>jobfairDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet7.xsc">
+      <DependentUpon>jobfairDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>jobfairDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="jobfairDataSet7.xss">
+      <DependentUpon>jobfairDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet8.xsc">
+      <DependentUpon>jobfairDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>jobfairDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="jobfairDataSet8.xss">
+      <DependentUpon>jobfairDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet9.xsc">
+      <DependentUpon>jobfairDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="jobfairDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>jobfairDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="jobfairDataSet9.xss">
+      <DependentUpon>jobfairDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\career.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\booth.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\traffic.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signup.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student.PNG" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
+  </Target>
+</Project>
